@@ -1,13 +1,6 @@
-from flask import Flask, render_template
-import sqlite3
+from application import app
 
-app = Flask(__name__)
-
-@app.route('/')
-def home():
-   return render_template('home.html',title="Home Page")
 
 if __name__=="__main__":
    app.run(debug=True)
-   #hello
    
