@@ -22,6 +22,39 @@
      padding: 14px 16px;
    }
 
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: #F5F5F5;
+    font-family: 'Poppins', sans-serif;
+}
+
+.logo{
+    color: rgb(226, 226, 226);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+}
+
+.nav-links{
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+.nav-links li{
+    list-style: none;
+}
+
+.nav-links a{
+    color: rgb(226, 226, 226);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
 .web-section{
     max-width: 960;
     margin: 0 auto;
@@ -76,7 +109,7 @@
   }
   
   .web-img img{
-    max-height: 330px;
+    max-height: 300px;
     max-width: 250px;
     height: 100%;
     width: 100%;
