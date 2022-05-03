@@ -3,18 +3,19 @@
 
     <div class="web-section">
      <ul class="web-grid">
-     
+     {% for team in teams %}
       <li>
         <div class="web-box">
         <div class="web-img">
-        <h2>Golden State Warriors</h2>
-        <a href="/templates/gsw.html">
-        <img src="/static/css/images/gsw.png">
-    </a>
-       </div>
-      </div>
-    </li> 
+        <h2>{{teamname[0]}}</h2>
+        <a href="/teams/{{teamname[0]}}">
+        <img src="/static/css/images/{{teamname[1]}}">
+      </a>
+    </div>
+  </div>
+</li> 
 
+{% endfor %}
 
     </ul>
   </div>
