@@ -4,7 +4,7 @@ import sqlite3
 
 
 def do_query(query, data=None, fetchone=False):
-   conn = sqlite3.connect('nba.db')
+   conn = sqlite3.connect('./application/nba.db')
    cur = conn.cursor()
    if data is None:
       cur.execute(query)
