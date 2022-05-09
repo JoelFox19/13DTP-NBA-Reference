@@ -20,8 +20,11 @@ def home():
    teams = do_query ("SELECT teamname, image FROM teams")
    return render_template('home.html',title="Home Page", teams=teams)
 
-@app.route('/gsw_team/<int:id>')
-def gsw_team():
-   players = do_query ("SELECT * from Players WHERE id=?;",(id,),fetchone=True)
-   return render_template('gsw.html',title="GSW Page", players=players)
+@app.route('/teams/<string:teamname>')
+def teams(teamname):
+   team_id = do_query ("SELECT * from Teams WHERE teamname=?;",(teamname,),fetchone=True)
+   players = do_query ("SELECT * FROM Players WHERE team_id=?;",(team_id[0],),fetchone=False)
+   return render_template('team.html',title="GSW Page", players=players,team_id=team_id)
+
+
 #pip3 install flask_sqlalchemy
