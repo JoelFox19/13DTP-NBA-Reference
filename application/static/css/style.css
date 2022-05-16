@@ -16,7 +16,7 @@
   }
   
   h3{
-     color: black;
+     color: white;
      text-shadow: none;
      font-size:15px;
      padding: 14px 16px;
@@ -27,7 +27,7 @@ nav{
     justify-content: space-around;
     align-items: center;
     min-height: 8vh;
-    background-color: #F5F5F5;
+    background-color: rgb(29,41,81);
     font-family: 'Poppins', sans-serif;
 }
 
@@ -48,7 +48,7 @@ nav{
 }
 
 .nav-links a{
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     text-decoration: none;
     letter-spacing: 3px;
     font-weight: bold;
@@ -150,14 +150,14 @@ nav{
   }
 
   .footer-container{
-    background-color: #F5F5F5;
+    background-color: rgb(29,41,81);
     padding: 64px 0 64px 0;      
   }
   
   .footer{
     width: 80%;
     height: 40vh;
-    background-color: #F5F5F5;
+    background-color: rgb(29,41,81);
     color: black;
     display: flex;
     justify-content: center;

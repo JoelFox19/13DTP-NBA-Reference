@@ -1,9 +1,16 @@
 {% extends 'layout.html' %}
 {% block content %}
 
-
+<div class="web-section">
+    <ul class="web-grid">
 {% for player in players %}
-<h2>{{player[1]}}</h2>
+
+
+<li>
+    <div class="web-box">
+    <div class="web-img">
+        <h2>{{player[1]}}</h2>
+      <img src="/static/css/images/{{team_id[4]}}">
 
 
 {% endfor %}
