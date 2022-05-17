@@ -2,10 +2,9 @@
 {% block content %}
 
 <div class="web-section">
-    
+  <ul class="web-tablegrid">
 {% for player in players %}
-
-<li>
+   <li>
     <div class="web-table">
     <div class="web-img">
         <h2>{{player[1]}}</h2>
@@ -16,6 +15,6 @@
 
 
 {% endfor %}
-
+  </ul>
 </div>
 {% endblock %}

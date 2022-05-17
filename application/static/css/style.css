@@ -99,6 +99,24 @@ nav{
     display: inline-block;
     margin: 5px;
   }
+
+  .web-tablegrid{
+    margin: 20px 0 0 0;
+    padding: 0;
+    list-style: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    column-count: 2;
+  }
+  
+  .web-tablegrid li{
+    width: 700px;
+    height: 300px;
+    display: inline-block;
+    margin: 5px;
+  }
+ 
   
   .web-box{
     width: 100%;
@@ -134,7 +152,12 @@ nav{
     height: 80%;
     margin-left: 10%;
     margin-bottom: 20px;
-    background-color: #F5F5F5;
+    text-align: center;
+    background-color: #006bb6;
+    background-image: url("/static/css/images/gsw.png");
+    background-repeat: no-repeat;
+    background-position: left;
+  
     position: relative;
     cursor: pointer;
     -webkit-transition: 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
