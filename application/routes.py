@@ -1,4 +1,3 @@
-from re import T
 from application import app
 from flask import render_template
 import sqlite3
