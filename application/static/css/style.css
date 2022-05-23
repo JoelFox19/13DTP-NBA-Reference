@@ -147,6 +147,19 @@ nav{
     width: 100%;
   }
 
+  .web-2img{
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  .web-2img img{
+    height: 100%;
+    width: 100%;
+  }
+
+
   .web-table{
     width: 300px;
     height: 80%;
@@ -165,6 +178,16 @@ nav{
     transform: scale(1.05);
   }
   
+  .web-team{
+    width: 500px;
+    height: 800px;
+    float: right;
+    background-color: #006bb6;
+    position: relative;
+    cursor: pointer;
+
+  }
+
   .web-info{
     position: absolute;
     width: inherit;
@@ -286,4 +309,15 @@ nav{
     }
   }
 
+  textarea{
+    height: 100%;
+    margin-left: 80%;
+    margin-top: -45%;
+    resize: none;
+    color: black;
+    background-color: #F5F5F5;
+    font-family: arial,sans-serif;
+
+    border: none;
+  }
 
