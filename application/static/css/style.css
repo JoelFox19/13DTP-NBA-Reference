@@ -181,8 +181,8 @@ nav{
   .web-team{
     width: 500px;
     height: 800px;
+    text-align: center;
     float: right;
-    background-color: #006bb6;
     position: relative;
     cursor: pointer;
 
