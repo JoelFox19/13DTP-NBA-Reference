@@ -23,7 +23,7 @@ def home():
 def teams(teamname):
    team_id = do_query ("SELECT * from Teams WHERE teamname=?;",(teamname,),fetchone=True)
    players = do_query ("SELECT * FROM Players WHERE team_id=?;",(team_id[0],),fetchone=False)
-   colours = do_query ("SELECT colour FROM teams")
+   colours = do_query ("SELECT colour FROM Teams")
    return render_template('team.html',title="Team Page", players=players,team_id=team_id,colours=colours)
 
 

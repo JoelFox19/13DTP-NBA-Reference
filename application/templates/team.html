@@ -1,8 +1,8 @@
 {% extends 'layout.html' %}
 {% block content %}
-{% for colours in teams %}
 <div class="web-section">
-  <div class="web-team" style="background-color: {{colours[0]}};">
+{% for colour in colours %}
+  <div class="web-team" style="background-color: {{colour[0]}}">
     {% endfor %}
   <h1>{{team_id[1]}}</h1>
 </div>
