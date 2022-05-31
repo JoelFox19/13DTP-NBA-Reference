@@ -178,6 +178,20 @@ nav{
     transform: scale(1.05);
   }
   
+  .web-3img{
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  .web-3img img{
+    max-height: 250px;
+    max-width: 250px;
+    height: 100%;
+    width: 100%;
+  }
+
   .web-team{
     width: 500px;
     height: 800px;
@@ -319,4 +333,7 @@ nav{
 
     border: none;
   }
+
+
+
 

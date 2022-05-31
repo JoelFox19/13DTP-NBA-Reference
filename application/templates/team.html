@@ -2,9 +2,13 @@
 {% block content %}
 <div class="web-section">
 {% for colour in colours %}
-  <div class="web-team" style="background-color: {{colour[0]}}">
+  <div class="web-team web-3img" style="background-color: {{colour[0]}}">
+    {% for image in teamimage_id %}
+    <img src="/static/css/images/{{image[0]}}">
+    {% endfor %}
     {% endfor %}
   <h1>{{team_id[1]}}</h1>
+</div>
 </div>
   <ul class="web-tablegrid">
 {% for player in players %}
