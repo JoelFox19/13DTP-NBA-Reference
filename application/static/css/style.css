@@ -172,12 +172,28 @@ nav{
     -webkit-transition: 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
     -moz-transition: 0.3s ease-in-out, -moz-transform 0.3s ease-in-out;
     transition: 0.3s ease-in-out, transform 0.3s ease-in-out;
+    animation: fadein 5.5s;
   }
-  
+
   .web-table:hover{
     transform: scale(1.05);
+ 
   }
   
+  .web-table:hover:after{
+    content: " - Height: 6'3 - Weight: 84kg";      
+    animation: fadein 1.5s;
+  }
+
+  @keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
   .web-3img{
     background-position: center;
     background-size: cover;
