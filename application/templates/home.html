@@ -1,13 +1,13 @@
 {% extends 'layout.html' %}
 {% block content %}
-
+<div class="img1">
+<img src="/static/css/images/nbafinals.png">
     <div class="web-section">
      <ul class="web-grid">
      {% for teamname in teams %}
       <li>
         <div class="web-box">
         <div class="web-img">
-
         <a href="/teams/{{teamname[0]}}">
         <img src="/static/css/images/{{teamname[1]}}">
         <h2>{{teamname[0]}}</h2>
@@ -19,6 +19,7 @@
 {% endfor %}
 
     </ul>
+  </div>
   </div>
 {%endblock%}
 
