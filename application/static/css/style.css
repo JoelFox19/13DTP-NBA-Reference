@@ -93,12 +93,6 @@ nav{
     margin: 5px;
 }
 
-@media screen and (max-width:768px){
-    body{
-      display: none;
-    }
-}
-
 .img1{
   margin-top: 50px;
 }
@@ -148,6 +142,7 @@ nav{
     text-align: left;
     width: 63%;
     column-count: 4;
+    column-width: 5rem;
   }
   
   .web-tablegrid li{
@@ -337,31 +332,6 @@ nav{
     background-color: #337AF1;
     transition: all 0.4s ease-out;
   }
-  
-  @media screen and (max-width: 1150px){
-    .footer{
-      height: 50vh;
-    }
-    .footer-email-form{
-      margin-top: 64px;
-    }
-  }
-  
-  @media screen and (max-width: 820px){
-    .footer{
-      padding-top: 32px;
-    }
-    
-  }
-  
-  @media screen and (max-width: 720px){
-    .footer-3{
-      height: 50vh;
-    }
-    .footer-email-form{
-      margin-top: 32px;
-    }
-  }
 
   textarea{
     height: 100%;
@@ -371,7 +341,6 @@ nav{
     color: black;
     background-color: #F5F5F5;
     font-family: arial,sans-serif;
-
     border: none;
   }
 
