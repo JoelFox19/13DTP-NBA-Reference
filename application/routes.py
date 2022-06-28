@@ -17,7 +17,12 @@ def do_query(query, data=None, fetchone=False):
 @app.route('/')
 def home():
    teams = do_query ("SELECT teamname, image FROM teams")
-   return render_template('home.html',title="Home Page", teams=teams)
+   return render_template('home.html',title="Home Page", teams=teams,)
+
+@app.route('/roster')
+def roster():
+   roster = do_query ("SELECT * FROM Roster")
+   return render_template('roster.html',title="Roster Page", roster=roster)
 
 @app.route('/teams/<string:teamname>')
 def teams(teamname):

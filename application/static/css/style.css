@@ -23,7 +23,7 @@
    }
 
 .logo{
-    color: white;
+    color: #fdb927;
     text-transform: uppercase;
     letter-spacing: 5px;
     font-size: 20px;
@@ -37,13 +37,10 @@
   font-family: 'Poppins', sans-serif;
   margin-bottom: 10px;
   border-bottom: 10px solid #051c2d;
- 
 }
 
-
-
 .header-img{
-  left: 1px;
+  left: 7px;
   margin-left: -5%;
   float: left;
   position: relative;
@@ -53,8 +50,8 @@
 }
 
 .header-img img{
-  max-height: 125px;
-  max-width: 125px;
+  max-height: 80px;
+  max-width: 120px;
   height: 50%;
   width: 42%;
 }
@@ -80,7 +77,7 @@ nav{
 }
 
 .nav-links a{
-    color: rgb(255, 255, 255);
+    color: white;
     text-decoration: none;
     letter-spacing: 3px;
     font-size: 14px;
@@ -115,7 +112,7 @@ nav{
     list-style: none;
     display: block;
     text-align: center;
-    width: 70%;
+    width: 100%;
   }
   
   .web-grid:after{
@@ -128,7 +125,7 @@ nav{
   }
   
   .web-grid li{
-    width: 300px;
+    width: 900px;
     height: 300px;
     display: inline-block;
     margin: 5px;
