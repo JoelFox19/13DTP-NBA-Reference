@@ -16,7 +16,7 @@ def do_query(query, data=None, fetchone=False):
 
 @app.route('/')
 def home():
-   teams = do_query ("SELECT teamname, image FROM teams")
+   teams = do_query ("SELECT teamname, image FROM display")
    return render_template('home.html',title="Home Page", teams=teams,)
 
 @app.route('/roster')
@@ -26,10 +26,10 @@ def roster():
 
 @app.route('/teams/<string:teamname>')
 def teams(teamname):
-   team_id = do_query ("SELECT * from Teams WHERE teamname=?;",(teamname,),fetchone=True)
-   teamimage_id = do_query ("SELECT image from Teams WHERE teamname=?;",(teamname,),fetchone=False)
-   players = do_query ("SELECT * FROM Players")
-   colours = do_query ("SELECT colour FROM Teams WHERE teamname=?;",(teamname,),fetchone=False)
+   team_id = do_query ("SELECT * from display WHERE teamname=?;",(teamname,),fetchone=True)
+   teamimage_id = do_query ("SELECT image from display WHERE teamname=?;",(teamname,),fetchone=False)
+   players = do_query ("SELECT * FROM news")
+   colours = do_query ("SELECT colour FROM display WHERE teamname=?;",(teamname,),fetchone=False)
    return render_template('team.html',title="Team Page", players=players,team_id=team_id,colours=colours,teamimage_id=teamimage_id)
 
 

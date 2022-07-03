@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    text-decoration: none;
   }
 
 
@@ -15,6 +16,8 @@
     color: black;
   }
   
+ 
+
   h3{
      color: white;
      text-shadow: none;
@@ -125,7 +128,7 @@ nav{
   }
   
   .web-grid li{
-    width: 900px;
+    width: 550px;
     height: 300px;
     display: inline-block;
     margin: 5px;
@@ -155,27 +158,21 @@ nav{
     background-color: #F5F5F5;
     position: relative;
     cursor: pointer;
-    -webkit-transition: 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
-    -moz-transition: 0.3s ease-in-out, -moz-transform 0.3s ease-in-out;
-    transition: 0.3s ease-in-out, transform 0.3s ease-in-out;
   }
   
-  .web-box:hover{
-    transform: scale(1.05);
-  }
 
   .web-img{
     background-position: center;
     background-size: cover;
     height: 100%;
-    width: 100%;
+    width: 50%;
   }
   
   .web-img img{
     max-height: 250px;
-    max-width: 250px;
+    max-width: 750px;
     height: 100%;
-    width: 100%;
+    width: 200%;
   }
 
   .web-2img{
