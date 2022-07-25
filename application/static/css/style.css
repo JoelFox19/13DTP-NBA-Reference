@@ -89,13 +89,6 @@ nav{
     font-size: 14px;
 }
 
-.layer div{
-    width: 25px;
-    height: 3px;
-    background-color: rgb(0, 0, 0);
-    margin: 5px;
-}
-
 .img1{
   margin-top: 50px;
 }
@@ -158,10 +151,16 @@ nav{
   .web-box{
     width: 100%;
     height: 100%;
+    border-radius: 5px;
     text-align: left;
     background-color: #F5F5F5;
     position: relative;
     cursor: pointer;
+  }
+
+  .web-box h2{
+    color: rgb(29, 66, 138);
+    font-size: 24px;
   }
   
 
@@ -175,6 +174,7 @@ nav{
   .web-img img{
     max-height: 250px;
     max-width: 750px;
+    border-radius: 5px;
     height: 100%;
     width: 200%;
   }
@@ -280,11 +280,11 @@ nav{
   
   .footer-heading h2{
     margin-bottom: 32px;
-    color: black;
+    color: white;
   }
   
   .footer-heading a{
-    color: black;
+    color: white;
     text-decoration: none;
     margin-bottom: 8px;
   }
@@ -343,12 +343,12 @@ nav{
   }
 
   .web-video{
-    margin-top: 40px;
+    margin-top: 10px;
     margin-bottom: 100px;
     background-position: center;
     background-size: cover;
-    height: 605px;
-    width: 77%;
+    height: 600px;
+    width: 58%;
     display: block;  
     margin-left: auto;  
     margin-right: auto;  
