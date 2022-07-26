@@ -1,24 +1,19 @@
 {% extends 'layout.html' %}
 {% block content %}
+{% for image in teamimage_id %}
+<div class="web-3img">
+  <img src="/static/css/images/{{image[0]}}">
 <div class="web-section">
 {% for colour in colours %}
-  <div class="web-team web-3img" style="background-color: {{colour[0]}}">
-    {% for image in teamimage_id %}
-    <img src="/static/css/images/{{image[0]}}">
+{% for information in players %}
+<h1>{{team_id[1]}}</h1>
+  <div class="web-team" style="background-color: {{colour[0]}}" <h2>{{information[0]}}</h2>>
     {% endfor %}
     {% endfor %}
-  <h1>{{team_id[1]}}</h1>
+  
 </div>
 </div>
   <ul class="web-tablegrid">
-{% for player in news %}
-    <div class="web-table">
-    <div class="web-2img">
-      <img src="/static/css/images/{{news[4]}}">
-      <h2>{{news[1]}}</h2>
-      <h2>{{news[5]}}</h2>
-      <h2>{{news[6]}}</h2>
-    </div>
   </div>
  </div>
 

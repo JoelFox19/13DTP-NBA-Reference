@@ -26,9 +26,9 @@ def roster():
 
 @app.route('/page/<string:teamname>')
 def pages(teamname):
-   team_id = do_query ("SELECT * from display WHERE teamname=?;",(teamname,),fetchone=True)
+   team_id = do_query ("SELECT * FROM display WHERE teamname=?;",(teamname,),fetchone=True)
    teamimage_id = do_query ("SELECT image from display WHERE teamname=?;",(teamname,),fetchone=False)
-   players = do_query ("SELECT * FROM news")
+   players = do_query ("SELECT information FROM display WHERE teamname=?;",(teamname,),fetchone=False)
    colours = do_query ("SELECT colour FROM display WHERE teamname=?;",(teamname,),fetchone=False)
    return render_template('page.html',title="Team Page", players=players,team_id=team_id,colours=colours,teamimage_id=teamimage_id)
 
