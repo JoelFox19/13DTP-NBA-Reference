@@ -220,6 +220,20 @@ nav{
   }
 
   .web-3img img{
+    max-height: 500px;
+    max-width: 1000px;
+    height: 100%;
+    width: 100%;
+  }
+
+  .web-4img{
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  .web-4img img{
     max-height: 250px;
     max-width: 250px;
     height: 100%;
@@ -227,6 +241,15 @@ nav{
   }
 
   .web-team{
+    width: 1850px;
+    height: 300px;
+    text-align: center;
+    float: right;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .web-1team{
     width: 500px;
     height: 1000px;
     text-align: center;
@@ -234,7 +257,6 @@ nav{
     position: relative;
     cursor: pointer;
   }
-
   .web-info{
     position: absolute;
     width: inherit;
