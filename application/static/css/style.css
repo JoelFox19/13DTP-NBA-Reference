@@ -28,6 +28,16 @@
      padding: 14px 16px;
    }
 
+   h4{
+    text-align: left;
+    padding: 20px 20px;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+   }
+
 .logo{
     color: #fdb927;
     text-transform: uppercase;
@@ -43,6 +53,14 @@
   font-family: 'Poppins', sans-serif;
   margin-bottom: 10px;
   border-bottom: 10px solid #051c2d;
+}
+
+.teamtext h1{
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .header-img{
@@ -261,7 +279,13 @@ nav{
   .web-team{
     width: 1380px;
     height: 700px;
-    text-align: center;
+    text-align: left;
+    padding: 20px 20px;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
     float: right;
     position: relative;
     cursor: pointer;
