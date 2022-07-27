@@ -220,8 +220,9 @@ nav{
   }
 
   .web-3img img{
+    padding: 10px 20px;
     max-height: 500px;
-    max-width: 1000px;
+    max-width: 1440px;
     height: 100%;
     width: 100%;
   }
@@ -240,9 +241,26 @@ nav{
     width: 100%;
   }
 
+  .web-5img{
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  .web-5img img{
+    float: right;
+    margin-top: -190px;
+    margin-right: 50px;
+    max-height: 250px;
+    max-width: 250px;
+    height: 100%;
+    width: 100%;
+  }
+
   .web-team{
-    width: 1850px;
-    height: 300px;
+    width: 1380px;
+    height: 700px;
     text-align: center;
     float: right;
     position: relative;
@@ -383,4 +401,41 @@ nav{
     height: 100%;
     width: 100%;
   }
+
+  /* Style the form element with a border around it */
+form {
+  border: 20px solid white;
+}
+
+/* Add some padding and a grey background color to containers */
+.container {
+  padding: 20px;
+  background-color: #F5F5F5;
+}
+
+/* Style the input elements and the submit button */
+input[type=text], input[type=submit] {
+  width: 50%;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid rgb(29,41,81);
+  box-sizing: border-box;
+}
+
+/* Add margins to the checkbox */
+input[type=checkbox] {
+  margin-top: 16px;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  background-color: rgb(29,41,81);
+  color: white;
+  border: none;
+}
+
+input[type=submit]:hover {
+  opacity: 0.8;
+}
 

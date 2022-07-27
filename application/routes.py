@@ -36,4 +36,8 @@ def pages(teamname):
 def shop():
    return render_template('shop.html',title="Shop Page")
 
+@app.route('/tickets')
+def tickets():
+   return render_template('tickets.html',title="Season Tickets Page")
+
 #pip3 install flask_sqlalchemy
