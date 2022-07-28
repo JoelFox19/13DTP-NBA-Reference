@@ -28,12 +28,16 @@ def roster():
 def pages(teamname):
    team_id = do_query ("SELECT * FROM display WHERE teamname=?;",(teamname,),fetchone=True)
    teamimage_id = do_query ("SELECT image from display WHERE teamname=?;",(teamname,),fetchone=False)
-   players = do_query ("SELECT information FROM display WHERE teamname=?;",(teamname,),fetchone=False)
+   players = do_query ("SELECT information, information2, information3, information4 FROM display WHERE teamname=?;",(teamname,),fetchone=False)
    colours = do_query ("SELECT colour FROM display WHERE teamname=?;",(teamname,),fetchone=False)
    return render_template('page.html',title="Team Page", players=players,team_id=team_id,colours=colours,teamimage_id=teamimage_id)
 
 @app.route('/shop')
 def shop():
    return render_template('shop.html',title="Shop Page")
+
+@app.route('/tickets')
+def tickets():
+   return render_template('tickets.html',title="Season Tickets Page")
 
 #pip3 install flask_sqlalchemy

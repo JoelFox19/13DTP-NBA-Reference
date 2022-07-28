@@ -6,11 +6,35 @@
 <div class="web-section">
 {% for colour in colours %}
 {% for information in players %}
+{% for information2 in players %}
+{% for information3 in players %}
+{% for information4 in players %}
+<a href="/tickets">
+  <div class="teamtext"> 
 <h1>{{team_id[1]}}</h1>
-  <div class="web-team" style="background-color: {{colour[0]}}" <h2>{{information[0]}}</h2>>
+</a>
+</div>
+  <div class="web-team" style="background-color: {{colour[0]}}">
+  <h4>{{information[0]}}</h4>
+  <h4>{{information2[1]}}</h4>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+    <h2>{{information3[2]}}</h2>
+    <h2>{{information4[3]}}</h2>
     {% endfor %}
     {% endfor %}
-  
+    {% endfor %}
+    {% endfor %}
+    {% endfor %}
 </div>
 </div>
   <ul class="web-tablegrid">
