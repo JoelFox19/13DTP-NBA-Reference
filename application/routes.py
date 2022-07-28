@@ -32,6 +32,11 @@ def pages(teamname):
    colours = do_query ("SELECT colour FROM display WHERE teamname=?;",(teamname,),fetchone=False)
    return render_template('page.html',title="Team Page", players=players,team_id=team_id,colours=colours,teamimage_id=teamimage_id)
 
+@app.route('/gallery')
+def gallery():
+   gallery = do_query ("SELECT * FROM News")
+   return render_template('gallery.html',title="Shop Page", gallery=gallery)
+
 @app.route('/shop')
 def shop():
    return render_template('shop.html',title="Shop Page")

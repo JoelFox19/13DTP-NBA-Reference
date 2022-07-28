@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="web-section">
+    <ul class="web-grid">
+    {% for news in news %}
+      <li>
+          <div class="web-box">
+          <div class="web-img">
+          <h2>{{news[0]}}</h2>
+          <a href="/static/css/images/{{news[0]}}" data-lightbox="mygallery" data-title="{{news[0]}}"> <!--Here I used the lightbox for the gallery of images on my webiste-->
+          <img src="/static/css/images/{{news[1]}}"> <!--This is the path to the images-->
+        </a>
+      </div>
+    </div>
+  </li> 
+
+{% endfor %}
+
+  </ul>
+</div>
+
+{% endblock %}
