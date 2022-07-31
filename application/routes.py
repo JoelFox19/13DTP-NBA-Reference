@@ -34,12 +34,8 @@ def pages(teamname):
 
 @app.route('/gallery')
 def gallery():
-   gallery = do_query ("SELECT * FROM News")
-   return render_template('gallery.html',title="Shop Page", gallery=gallery)
-
-@app.route('/shop')
-def shop():
-   return render_template('shop.html',title="Shop Page")
+   gallery = do_query ("SELECT image, title FROM News")
+   return render_template('gallery.html',title="Gallery", gallery=gallery)
 
 @app.route('/tickets')
 def tickets():
