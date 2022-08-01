@@ -1,5 +1,5 @@
 from application import app
-from flask import render_template
+from flask import render_template, redirect, url_for, request
 import sqlite3
 
 
@@ -40,5 +40,19 @@ def gallery():
 @app.route('/tickets')
 def tickets():
    return render_template('tickets.html',title="Season Tickets Page")
+
+@app.route('/subscribe',methods=["POST"])
+def subscribe():
+   name = request.form["name"]
+   email = request.form["email"]
+   news = request.form["news"]
+   conn = sqlite3.connect('./application/nba.db')
+   cur = conn.cursor()
+   cur.execute("INSERT INTO email (name, email, news) VALUES (?, ?, ?)", (name, email, news))
+   conn.commit()
+   conn.close()
+   return redirect(url_for('tickets')) 
+
+
 
 #pip3 install flask_sqlalchemy

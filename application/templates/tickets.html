@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block content %}
-<form action="action_page.php">
+<form action="/subscribe" method="post">
     <div class="container">
         <div class="teamtext">
       <a>Golden State Warriors</a>
@@ -10,9 +10,9 @@
   
     <div class="container" style="background-color:#F5F5F5">
       <input type="text" placeholder="Name" name="name" required>
-      <input type="text" placeholder="Email address" name="mail" required>
+      <input type="text" placeholder="Email address" name="email" required, pattern=" .+@globex.com .+@gmail.com .+@burnside.school.nz .+@hotmail.com .+@yahoo.com" size="30" required>
       <label>
-        <input type="checkbox" checked="checked" name="subscribe"> Email me Golden State Warrior News
+        <input type="checkbox" checked="checked" name="news"> Email me Golden State Warrior News
       </label>
     </div>
 
@@ -26,6 +26,5 @@
   </form>
 
   
-
  
 {% endblock %}
