@@ -56,3 +56,5 @@ def subscribe():
 
 
 #pip3 install flask_sqlalchemy
+
+
