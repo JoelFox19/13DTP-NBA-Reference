@@ -53,7 +53,9 @@ def subscribe():
    conn.close()
    return redirect(url_for('tickets')) 
 
-
+@app.route('/about')
+def about():
+   return render_template('about.html',title="About Page")
 
 #pip3 install flask_sqlalchemy
 
