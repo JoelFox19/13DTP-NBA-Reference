@@ -1,0 +1,18 @@
+{% extends 'layout.html' %} <!--This is python code that extends the layout.html to this specfic page by appearing on all the pages where I have this code-->
+{% block content %}
+
+<!--Here is the code for the 404 error page. I used 3 div classes and a list-->
+  <div class="error-section">
+    <ul class="error-grid">
+      <li>
+          <div class="error-box">
+            <h1>404</h1>
+              <p>The page you are looking for does not exist</p>
+              <br>
+              <a href="/">HOME</a> <!--This is the link to click to go to the home page of my website-->
+          </div>
+      </li>
+    </ul>
+  </div>
+
+{% endblock %}
