@@ -47,7 +47,7 @@ def tickets():
 def subscribe():
    name = request.form["name"]
    email = request.form["email"]
-   news = request.form["news"]
+   news = request.form.get("news")
    conn = sqlite3.connect('./application/nba.db')
    cur = conn.cursor()
    cur.execute("INSERT INTO email (name, email, news) VALUES (?, ?, ?)", (name, email, news))
