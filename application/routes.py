@@ -20,9 +20,9 @@ def home():
    return render_template('home.html',title="Home Page", teams=teams)
 
 @app.route('/roster')
-def roster():
-   roster = do_query ("SELECT * FROM Roster")
-   return render_template('roster.html',title="Roster Page", roster=roster)
+def player():
+   player = do_query ("SELECT * FROM Player")
+   return render_template('roster.html',title="Roster Page", player=player)
 
 @app.route('/page/<string:teamname>')
 def pages(teamname):
@@ -35,9 +35,9 @@ def pages(teamname):
    return render_template('page.html',title="Team Page", players=players,team_id=team_id,colours=colours,teamimage_id=teamimage_id)
 
 @app.route('/gallery')
-def gallery():
-   gallery = do_query ("SELECT image, title FROM News")
-   return render_template('gallery.html',title="Gallery", gallery=gallery)
+def picture():
+   picture = do_query ("SELECT image, title FROM picture")
+   return render_template('gallery.html',title="Gallery", picture=picture)
 
 @app.route('/tickets')
 def tickets():
