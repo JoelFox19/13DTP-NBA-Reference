@@ -37,7 +37,8 @@ def pages(teamname):
 @app.route('/gallery')
 def picture():
    picture = do_query ("SELECT image, title FROM picture")
-   return render_template('gallery.html',title="Gallery", picture=picture)
+   join_image = ("SELECT Player.name FROM player_picture JOIN Player ON Player.id = player_picture.player_id WHERE player_picture.picture_id = ?;")
+   return render_template('gallery.html',title="Gallery", picture=picture, join_image=join_image)
 
 @app.route('/tickets')
 def tickets():
