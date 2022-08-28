@@ -1,5 +1,5 @@
 from application import app
-from flask import render_template, redirect, url_for, request, abort
+from flask import render_template, redirect, url_for, request, abort, current_app, g
 import sqlite3
 
 
@@ -37,8 +37,8 @@ def pages(teamname):
 @app.route('/gallery')
 def picture():
    picture = do_query ("SELECT image, title FROM picture")
-   join_image = ("SELECT Player.name FROM player_picture JOIN Player ON Player.id = player_picture.player_id WHERE player_picture.picture_id = ?;")
-   return render_template('gallery.html',title="Gallery", picture=picture, join_image=join_image)
+   #join_image = do_query ("SELECT Player.name FROM player_picture JOIN Player ON Player.id = player_picture.player_id WHERE player_picture.picture_id=?;")
+   return render_template('gallery.html',title="Gallery", picture=picture)
 
 @app.route('/tickets')
 def tickets():
@@ -56,9 +56,21 @@ def subscribe():
    conn.close()
    return redirect(url_for('tickets')) 
 
+def do1_query(query, data=None, fetchone=False):
+   conn = sqlite3.connect('./application/nba.db')
+   cur = conn.cursor()
+   if data is None:
+      cur.execute(query)
+   else:
+      cur.execute(query, data)
+   results = cur.fetchone()if fetchone else cur.fetchall()
+   conn.close()
+   return results
+
 @app.route('/about')
-def about():
-   return render_template('about.html',title="About Page")
+def player_id():
+   about = do1_query ("SELECT Picture.image FROM player_picture JOIN Player ON Player.id = player_picture.player_id JOIN Picture ON Picture.id = player_picture.picture_id WHERE player_picture.player_id=?;",data=(player_id,))
+   return render_template('about.html',title="About Page", about=about)
 
 #This query is for my 404 error page so that users cannot go to web pages that do not exist on my website and the 404 page will appear if a user tries to.
 @app.errorhandler(404)
