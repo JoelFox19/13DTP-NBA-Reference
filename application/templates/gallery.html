@@ -1,11 +1,14 @@
 {% extends 'layout.html' %}
 {% block content %}
+<form action="/playergallery" method="post">
 <div class="search">
-<input type="text" placeholder="Search..">
+<input type="text" placeholder="Search Player.." name="playername">
+<button type="submit">Search</button>
 </div>
+</form>
 <div class="newreleases-section">
     <ul class="web-grid">
-    {% for image in picture %}
+    {% for image in images %}
       <li>
           <div class="newreleases-box">
           <div class="newreleases-img">

@@ -35,10 +35,15 @@ def pages(teamname):
    return render_template('page.html',title="Team Page", players=players,team_id=team_id,colours=colours,teamimage_id=teamimage_id)
 
 @app.route('/gallery')
-def picture():
-   picture = do_query ("SELECT image, title FROM picture")
+def gallery():
+   about = do_query ("SELECT image, title FROM picture")
    #join_image = do_query ("SELECT Player.name FROM player_picture JOIN Player ON Player.id = player_picture.player_id WHERE player_picture.picture_id=?;")
-   return render_template('gallery.html',title="Gallery", picture=picture)
+   return render_template('gallery.html',title="Gallery", about=about)
+
+@app.route('/about')
+def about():
+   #join_image = do_query ("SELECT Player.name FROM player_picture JOIN Player ON Player.id = player_picture.player_id WHERE player_picture.picture_id=?;")
+   return render_template('about.html',title="Gallery", about=about)
 
 @app.route('/tickets')
 def tickets():
@@ -67,10 +72,13 @@ def do1_query(query, data=None, fetchone=False):
    conn.close()
    return results
 
-@app.route('/about')
-def player_id():
-   about = do1_query ("SELECT Picture.image FROM player_picture JOIN Player ON Player.id = player_picture.player_id JOIN Picture ON Picture.id = player_picture.picture_id WHERE player_picture.player_id=?;",data=(player_id,))
-   return render_template('about.html',title="About Page", about=about)
+@app.route('/playergallery',methods=["POST","GET"])
+def playergallery():
+   playername = request.form["playername"]
+   print(playername)
+   images = do1_query ("SELECT Picture.image FROM player_picture JOIN Player ON Player.id = player_picture.player_id JOIN Picture ON Picture.id = player_picture.picture_id WHERE Player.name=?;",data=(playername,))
+   print(images)
+   return render_template('gallery.html',title="Gallery Page", images=images)
 
 #This query is for my 404 error page so that users cannot go to web pages that do not exist on my website and the 404 page will appear if a user tries to.
 @app.errorhandler(404)
