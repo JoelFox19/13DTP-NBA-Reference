@@ -61,24 +61,21 @@ def subscribe():
    conn.close()
    return redirect(url_for('tickets')) 
 
-def do1_query(query, data=None, fetchone=False):
-   conn = sqlite3.connect('./application/nba.db')
-   cur = conn.cursor()
-   if data is None:
-      cur.execute(query)
-   else:
-      cur.execute(query, data)
-   results = cur.fetchone()if fetchone else cur.fetchall()
-   conn.close()
-   return results
-
 @app.route('/playergallery',methods=["POST","GET"])
 def playergallery():
-   playername = request.form["playername"]
-   print(playername)
-   images = do1_query ("SELECT Picture.image FROM player_picture JOIN Player ON Player.id = player_picture.player_id JOIN Picture ON Picture.id = player_picture.picture_id WHERE Player.name=?;",data=(playername,))
-   print(images)
-   return render_template('gallery.html',title="Gallery Page", images=images)
+   if request.method=="POST":
+      playername = request.form["playername"]
+      images = do_query ("SELECT Picture.image FROM player_picture JOIN Player ON Player.id = player_picture.player_id JOIN Picture ON Picture.id = player_picture.picture_id WHERE Player.name=?;",data=(playername,))
+   else:
+      images = do_query ("SELECT image FROM Picture")
+      players = do_query ("SELECT id, name FROM Player")
+   return render_template('gallery.html',title="Gallery Page", images=images, players=players)
+
+@app.route('/playerpicture/<int:id>')
+def playerpicture(id):
+   images = do_query ("SELECT Picture.image FROM player_picture JOIN Player ON Player.id = player_picture.player_id JOIN Picture ON Picture.id = player_picture.picture_id WHERE Player.id=?;",data=(id,))
+   players = do_query ("SELECT id, name FROM Player")
+   return render_template('gallery.html', title="Pictures of Player Page", images=images, players=players)
 
 #This query is for my 404 error page so that users cannot go to web pages that do not exist on my website and the 404 page will appear if a user tries to.
 @app.errorhandler(404)
