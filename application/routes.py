@@ -1,8 +1,9 @@
+#This code was created by Joel Fox in 2022
 from application import app
 from flask import render_template, redirect, url_for, request, abort, current_app, g
 import sqlite3
 
-
+#This is a do_query and it simplifys my code as this query helps my other functions work.
 def do_query(query, data=None, fetchone=False):
    conn = sqlite3.connect('./application/nba.db')
    cur = conn.cursor()
@@ -14,16 +15,19 @@ def do_query(query, data=None, fetchone=False):
    conn.close()
    return results
 
+#This query takes everything from the display table and puts it on the 'home.html' page.
 @app.route('/')
 def home():
    teams = do_query ("SELECT teamname, image FROM display")
    return render_template('home.html',title="Home Page", teams=teams)
 
+#This query shows the team players from the roster
 @app.route('/roster')
 def player():
    player = do_query ("SELECT * FROM Player")
    return render_template('roster.html',title="Roster Page", player=player)
 
+#This query takes all of the different pages and uses the display table to show different information on different pages.
 @app.route('/page/<string:teamname>')
 def pages(teamname):
    team_id = do_query ("SELECT * FROM display WHERE teamname=?;",(teamname,),fetchone=True)
@@ -34,21 +38,23 @@ def pages(teamname):
       abort(404)
    return render_template('page.html',title="Team Page", players=players,team_id=team_id,colours=colours,teamimage_id=teamimage_id)
 
+#This query takes all of the images to display a gallery and matches it with the players in each image.
 @app.route('/gallery')
 def gallery():
    about = do_query ("SELECT image, title FROM picture")
-   #join_image = do_query ("SELECT Player.name FROM player_picture JOIN Player ON Player.id = player_picture.player_id WHERE player_picture.picture_id=?;")
    return render_template('gallery.html',title="Gallery", about=about)
 
+#This query stores the about my website information.
 @app.route('/about')
 def about():
-   #join_image = do_query ("SELECT Player.name FROM player_picture JOIN Player ON Player.id = player_picture.player_id WHERE player_picture.picture_id=?;")
    return render_template('about.html',title="Gallery", about=about)
 
+#This query stores the subsciption list of names and emails in my database.
 @app.route('/tickets')
 def tickets():
    return render_template('tickets.html',title="Season Tickets Page")
 
+#This query is for my subscribe post form.
 @app.route('/subscribe',methods=["POST"])
 def subscribe():
    name = request.form["name"]
@@ -61,6 +67,7 @@ def subscribe():
    conn.close()
    return redirect(url_for('tickets')) 
 
+#This query is for my many to many relationship with my player gallery.
 @app.route('/playergallery',methods=["POST","GET"])
 def playergallery():
    if request.method=="POST":
@@ -71,6 +78,7 @@ def playergallery():
       players = do_query ("SELECT id, name FROM Player")
    return render_template('gallery.html',title="Gallery Page", images=images, players=players)
 
+#This query lists the players with an integer to match different images.
 @app.route('/playerpicture/<int:id>')
 def playerpicture(id):
    images = do_query ("SELECT Picture.image FROM player_picture JOIN Player ON Player.id = player_picture.player_id JOIN Picture ON Picture.id = player_picture.picture_id WHERE Player.id=?;",data=(id,))
@@ -82,6 +90,6 @@ def playerpicture(id):
 def page_not_found(e):
     return render_template('404.html'), 404
 
-#pip3 install flask_sqlalchemy
+
 
 
