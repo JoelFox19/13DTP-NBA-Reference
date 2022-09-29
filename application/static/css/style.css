@@ -67,7 +67,6 @@
   margin-left: -5%;
   float: left;
   position: relative;
-  cursor: pointer;
   padding: 2% 2%;
   
 }
@@ -244,7 +243,6 @@ nav{
     text-align: left;
     background-color: #F5F5F5;
     position: relative;
-    cursor: pointer;
   }
 
   .web-box h2{
@@ -289,7 +287,6 @@ nav{
     text-align: center;
     background-color: #F5F5F5;  
     position: relative;
-    cursor: pointer;
     -webkit-transition: 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
     -moz-transition: 0.3s ease-in-out, -moz-transform 0.3s ease-in-out;
     transition: 0.3s ease-in-out, transform 0.3s ease-in-out;
@@ -362,7 +359,6 @@ nav{
     font-family: 'Poppins', sans-serif;
     float: right;
     position: relative;
-    cursor: pointer;
   }
 
   .web-1team{
@@ -371,7 +367,6 @@ nav{
     text-align: center;
     float: right;
     position: relative;
-    cursor: pointer;
   }
   .web-info{
     position: absolute;
@@ -465,7 +460,6 @@ nav{
   }
   
   #footer-email-btn:hover{
-    cursor: pointer;
     background-color: #337AF1;
     transition: all 0.4s ease-out;
   }
@@ -562,7 +556,6 @@ input[type=submit]:hover {
   height: 100%;
   background-color: #F5F5F5;
   position: relative;
-  cursor: pointer;
   margin-bottom: 10px;
   margin-left: auto;  
   margin-right: auto;  
@@ -616,7 +609,6 @@ input[type=submit]:hover {
   padding: 70px;
   background-color: #F5F5F5;
   position: relative;
-  cursor: pointer;
 }
 
 .error-grid li{
