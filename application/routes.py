@@ -1,3 +1,4 @@
+
 #This code was created by Joel Fox in 2022
 from application import app
 from flask import render_template, redirect, url_for, request, abort, current_app, g
